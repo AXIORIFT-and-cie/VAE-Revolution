@@ -1,43 +1,34 @@
-<svg width="900" height="220" xmlns="http://www.w3.org/2000/svg">
+<svg width="1400" height="350" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 350">
   <defs>
-    <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#0088cc;stop-opacity:1" />
-      <stop offset="25%" style="stop-color:#00b4d8;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
-      <stop offset="75%" style="stop-color:#00b4d8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#0088cc;stop-opacity:1" />
+    <linearGradient id="blueLineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#5a9fb8;stop-opacity:1" />
+      <stop offset="20%" style="stop-color:#4db8d8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3dd4f4;stop-opacity:1" />
+      <stop offset="80%" style="stop-color:#4db8d8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#5a9fb8;stop-opacity:1" />
     </linearGradient>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
-      <feMerge>
-        <feMergeNode in="coloredBlur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
   </defs>
 
-  <!-- AXIORIFT text with outline style -->
-  <text x="450" y="120"
-        font-family="Orbitron, Arial, sans-serif"
-        font-size="90"
-        font-weight="400"
+  <!-- AXIORIFT text with outline style matching the image -->
+  <text x="700" y="180"
+        font-family="'Arial', sans-serif"
+        font-size="140"
+        font-weight="300"
         fill="none"
-        stroke="#e8e8e8"
-        stroke-width="2.5"
+        stroke="#d0d0d0"
+        stroke-width="3"
         text-anchor="middle"
-        letter-spacing="12"
-        filter="url(#softGlow)">AXIORIFT</text>
+        letter-spacing="18">AXIORIFT</text>
 
   <!-- Blue gradient line underneath -->
-  <rect x="100" y="155" width="700" height="8"
-        fill="url(#lineGradient)"
-        filter="url(#softGlow)"/>
+  <rect x="280" y="235" width="840" height="12"
+        fill="url(#blueLineGradient)"/>
 
-  <!-- End caps for the line -->
-  <rect x="85" y="153" width="20" height="12"
-        fill="url(#lineGradient)"
-        filter="url(#softGlow)"/>
-  <rect x="795" y="153" width="20" height="12"
-        fill="url(#lineGradient)"
-        filter="url(#softGlow)"/>
+  <!-- Left end cap -->
+  <rect x="255" y="232" width="30" height="18"
+        fill="url(#blueLineGradient)"/>
+
+  <!-- Right end cap -->
+  <rect x="1115" y="232" width="30" height="18"
+        fill="url(#blueLineGradient)"/>
 </svg>

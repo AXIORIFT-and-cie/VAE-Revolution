@@ -5,15 +5,15 @@ document.querySelector('.cta-button').addEventListener('click', function() {
     });
 });
 
-// Subtle glow effect on title hover
-const title = document.querySelector('.main-title');
-if (title) {
-    title.addEventListener('mouseenter', function() {
-        this.style.textShadow = '0 0 30px rgba(0, 212, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5)';
+// Subtle glow effect on hero logo hover
+const heroLogo = document.querySelector('.hero-logo');
+if (heroLogo) {
+    heroLogo.addEventListener('mouseenter', function() {
+        this.style.filter = 'drop-shadow(0 0 30px rgba(0, 212, 255, 0.5))';
     });
 
-    title.addEventListener('mouseleave', function() {
-        this.style.textShadow = '0 0 20px rgba(0, 212, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.5)';
+    heroLogo.addEventListener('mouseleave', function() {
+        this.style.filter = 'drop-shadow(0 0 20px rgba(0, 212, 255, 0.2))';
     });
 }
 
