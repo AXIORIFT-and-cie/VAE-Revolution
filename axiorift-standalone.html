@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AXIORIFT - La Perfection Électrique</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00a8cc;
+            --accent-cyan: #00d4ff;
+            --dark-bg: #0d0d0d;
+            --darker-bg: #080808;
+            --card-bg: rgba(20, 20, 25, 0.6);
+            --text-primary: #f5f5f5;
+            --text-secondary: #b0b0b8;
+            --border-color: rgba(0, 168, 204, 0.15);
+            --glow-subtle: 0 0 15px rgba(0, 212, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: linear-gradient(180deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        header {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--border-color);
+            background: rgba(8, 8, 8, 0.8);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo {
+            height: 90px;
+            filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
+            transition: all 0.4s ease;
+        }
+
+        .logo:hover {
+            filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6));
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 8rem 3rem;
+            text-align: center;
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .main-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 6rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            text-shadow:
+                0 0 20px rgba(0, 212, 255, 0.2),
+                0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .tagline {
+            font-size: 1.6rem;
+            color: var(--text-secondary);
+            margin-bottom: 3.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+        }
+
+        .cta-container {
+            margin-top: 3rem;
+        }
+
+        .cta-button {
+            position: relative;
+            padding: 1.3rem 3.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 25px rgba(0, 212, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 2;
+        }
+
+        .button-glow {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover .button-glow {
+            left: 100%;
+        }
+
+        /* Features Section */
+        .features {
+            max-width: 1400px;
+            margin: 8rem auto;
+            padding: 0 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3), var(--glow-subtle);
+        }
+
+        .feature-card.highlight {
+            border-color: var(--primary-color);
+            background: rgba(0, 168, 204, 0.05);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .feature-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            letter-spacing: 0.15em;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            line-height: 1.9;
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        /* Manifesto Section */
+        .manifesto {
+            max-width: 1400px;
+            margin: 10rem auto;
+            padding: 5rem 3rem;
+            text-align: center;
+        }
+
+        .manifesto-content h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 4rem;
+            color: var(--text-primary);
+            letter-spacing: 0.1em;
+            font-weight: 700;
+        }
+
+        .manifesto-text {
+            max-width: 800px;
+            margin: 0 auto 5rem;
+        }
+
+        .manifesto-text p {
+            font-size: 1.4rem;
+            margin-bottom: 1.3rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            margin-top: 5rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            background: rgba(0, 168, 204, 0.03);
+            min-width: 180px;
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--glow-subtle);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-weight: 400;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0;
+            margin-top: 8rem;
+            background: rgba(8, 8, 8, 0.6);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .main-title {
+                font-size: 4.5rem;
+            }
+
+            .stats {
+                gap: 3rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 0 2rem;
+            }
+
+            .hero {
+                padding: 5rem 2rem;
+            }
+
+            .main-title {
+                font-size: 3rem;
+                letter-spacing: 0.1em;
+            }
+
+            .tagline {
+                font-size: 1.3rem;
+            }
+
+            .manifesto-content h2 {
+                font-size: 2.5rem;
+            }
+
+            .manifesto-text p {
+                font-size: 1.2rem;
+            }
+
+            .stats {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .stat {
+                width: 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .logo {
+                height: 70px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-title {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 0.9rem;
+            }
+
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .manifesto {
+                padding: 3rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo-container">
+                <svg class="logo" width="900" height="220" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+                    <defs>
+                        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#0088cc;stop-opacity:1" />
+                            <stop offset="25%" style="stop-color:#00b4d8;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#00d4ff;stop-opacity:1" />
+                            <stop offset="75%" style="stop-color:#00b4d8;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#0088cc;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="softGlow">
+                            <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+                    <text x="450" y="120" font-family="Orbitron, Arial, sans-serif" font-size="90" font-weight="400" fill="none" stroke="#e8e8e8" stroke-width="2.5" text-anchor="middle" letter-spacing="12" filter="url(#softGlow)">AXIORIFT</text>
+                    <rect x="100" y="155" width="700" height="8" fill="url(#lineGradient)" filter="url(#softGlow)"/>
+                    <rect x="85" y="153" width="20" height="12" fill="url(#lineGradient)" filter="url(#softGlow)"/>
+                    <rect x="795" y="153" width="20" height="12" fill="url(#lineGradient)" filter="url(#softGlow)"/>
+                </svg>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="main-title">AXIORIFT</h1>
+                <p class="tagline">La perfection électrique réinventée</p>
+                <div class="cta-container">
+                    <button class="cta-button">
+                        <span>DÉCOUVRIR</span>
+                        <div class="button-glow"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>KIT DE TRANSFORMATION</h3>
+                <p>Transformez votre vélo classique en vélo à assistance électrique de dernière génération. La technologie à portée de main.</p>
+            </div>
+
+            <div class="feature-card highlight">
+                <div class="feature-icon">🔋</div>
+                <h3>BATTERIE NITRO</h3>
+                <p>Design unique en forme de canette nitro. L'esthétique rencontre la performance. Une intégration parfaite sur votre cadre.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">♻️</div>
+                <h3>RÉCUPÉRATION D'ÉNERGIE</h3>
+                <p>Système innovant de récupération d'énergie au freinage. Chaque descente recharge votre batterie. L'efficience absolue.</p>
+            </div>
+        </section>
+
+        <section class="manifesto">
+            <div class="manifesto-content">
+                <h2>LA PERFECTION EN MOUVEMENT</h2>
+                <div class="manifesto-text">
+                    <p>AXIORIFT n'est pas simplement un kit de conversion.</p>
+                    <p>C'est une révolution dans votre mobilité quotidienne.</p>
+                    <p>C'est la fusion parfaite entre design et technologie.</p>
+                    <p>C'est le futur, aujourd'hui.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Perfection</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">∞</span>
+                        <span class="stat-label">Innovation</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">Compromis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 AXIORIFT - La perfection électrique</p>
+            <div class="footer-links">
+                <a href="#">Contact</a>
+                <a href="#">Mentions légales</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for CTA button
+        document.querySelector('.cta-button').addEventListener('click', function() {
+            document.querySelector('.features').scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+
+        // Subtle glow effect on title hover
+        const title = document.querySelector('.main-title');
+        if (title) {
+            title.addEventListener('mouseenter', function() {
+                this.style.textShadow = '0 0 30px rgba(0, 212, 255, 0.4), 0 2px 4px rgba(0, 0, 0, 0.5)';
+            });
+
+            title.addEventListener('mouseleave', function() {
+                this.style.textShadow = '0 0 20px rgba(0, 212, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.5)';
+            });
+        }
+
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Observe manifesto section
+        const manifesto = document.querySelector('.manifesto-content');
+        if (manifesto) {
+            manifesto.style.opacity = '0';
+            manifesto.style.transform = 'translateY(30px)';
+            manifesto.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(manifesto);
+        }
+
+        // Number animation for perfection stat
+        function animateNumber(element, target, suffix = '', duration = 1500) {
+            let start = 0;
+            const increment = target / (duration / 16);
+
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target + suffix;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start) + suffix;
+                }
+            }, 16);
+        }
+
+        // Trigger number animation when stats are visible
+        const statsObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const perfectionStat = document.querySelector('.stat-number');
+                    if (perfectionStat && perfectionStat.textContent === '99%') {
+                        perfectionStat.textContent = '0%';
+                        setTimeout(() => {
+                            animateNumber(perfectionStat, 99, '%', 2000);
+                        }, 200);
+                    }
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        const stats = document.querySelector('.stats');
+        if (stats) {
+            statsObserver.observe(stats);
+        }
+    </script>
+</body>
+</html>
