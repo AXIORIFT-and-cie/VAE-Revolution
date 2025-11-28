@@ -1,37 +1,39 @@
 <svg width="1400" height="350" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 350">
   <defs>
-    <!-- Gradient exact de l'image: bleu foncé aux bords, cyan au centre -->
+    <!-- Gradient de l'image de gauche: bleu-teal foncé → cyan brillant → bleu-teal foncé -->
     <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#4a7c8f;stop-opacity:1" />
-      <stop offset="15%" style="stop-color:#3a8fa8;stop-opacity:1" />
-      <stop offset="35%" style="stop-color:#2bb4d4;stop-opacity:1" />
-      <stop offset="50%" style="stop-color:#1fd8f8;stop-opacity:1" />
-      <stop offset="65%" style="stop-color:#2bb4d4;stop-opacity:1" />
-      <stop offset="85%" style="stop-color:#3a8fa8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#4a7c8f;stop-opacity:1" />
+      <stop offset="0%" style="stop-color:#306A7A;stop-opacity:1" />
+      <stop offset="10%" style="stop-color:#3D7E8E;stop-opacity:1" />
+      <stop offset="25%" style="stop-color:#4A96AC;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#18C8E8;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00E0FF;stop-opacity:1" />
+      <stop offset="60%" style="stop-color:#18C8E8;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#4A96AC;stop-opacity:1" />
+      <stop offset="90%" style="stop-color:#3D7E8E;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#306A7A;stop-opacity:1" />
     </linearGradient>
   </defs>
 
-  <!-- AXIORIFT texte avec outline fin comme dans l'image -->
+  <!-- AXIORIFT avec outline très fin comme l'image de gauche -->
   <text x="700" y="175"
-        font-family="Arial, sans-serif"
-        font-size="135"
-        font-weight="300"
+        font-family="Arial, Helvetica, sans-serif"
+        font-size="138"
+        font-weight="200"
         fill="none"
-        stroke="#d8d8d8"
-        stroke-width="2.5"
+        stroke="#CBCBCB"
+        stroke-width="2"
         text-anchor="middle"
-        letter-spacing="20">AXIORIFT</text>
+        letter-spacing="22">AXIORIFT</text>
 
-  <!-- Ligne bleue gradient principale -->
-  <rect x="278" y="235" width="844" height="10"
+  <!-- Ligne bleue gradient -->
+  <rect x="278" y="236" width="844" height="9"
         fill="url(#lineGradient)"/>
 
-  <!-- Accent gauche -->
-  <rect x="252" y="232" width="32" height="16"
+  <!-- Accent rectangulaire gauche -->
+  <rect x="252" y="233" width="32" height="15"
         fill="url(#lineGradient)"/>
 
-  <!-- Accent droit -->
-  <rect x="1116" y="232" width="32" height="16"
+  <!-- Accent rectangulaire droit -->
+  <rect x="1116" y="233" width="32" height="15"
         fill="url(#lineGradient)"/>
 </svg>
