@@ -1,10 +1,10 @@
 # AXIORIFT - Site Web
 
-Site web cyberpunk pour le kit de transformation VAE AXIORIFT.
+Site web moderne et professionnel pour le kit de transformation VAE AXIORIFT.
 
 ## Installation
 
-1. Ajoutez votre logo dans `assets/images/logo.png`
+1. Le logo SVG est déjà inclus. Pour utiliser votre logo PNG original, remplacez simplement `assets/images/logo.svg` par `logo.png` et mettez à jour le lien dans `index.html`
 2. Ouvrez `index.html` dans votre navigateur
 
 ## Structure
