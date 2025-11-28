@@ -5,17 +5,14 @@ document.querySelector('.cta-button').addEventListener('click', function() {
     });
 });
 
-// Add glitch effect on hover
-const title = document.querySelector('.glitch');
+// Subtle glow effect on title hover
+const title = document.querySelector('.main-title');
 title.addEventListener('mouseenter', function() {
-    this.style.animation = 'none';
-    setTimeout(() => {
-        this.style.animation = 'glitch 0.3s infinite';
-    }, 10);
+    this.style.textShadow = '0 0 20px rgba(0, 243, 255, 0.8), 0 0 40px rgba(0, 243, 255, 0.5)';
 });
 
 title.addEventListener('mouseleave', function() {
-    this.style.animation = 'glitch 3s infinite';
+    this.style.textShadow = '0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3)';
 });
 
 // Parallax effect for hero visual
