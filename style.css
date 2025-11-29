@@ -219,7 +219,7 @@ nav {
 .feature-detail {
     min-height: 100vh;
     width: 100%;
-    padding: 8rem 6rem;
+    padding: 8rem 2rem 8rem 2rem;
     border-radius: 0;
     border: none;
     position: relative;
@@ -250,7 +250,7 @@ nav {
     position: relative;
     z-index: 4;
     max-width: 1000px;
-    padding: 4rem;
+    padding: 2rem 4rem 2rem 0;
     text-align: left !important;
 }
 
