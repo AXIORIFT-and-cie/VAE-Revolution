@@ -40,6 +40,32 @@ document.querySelectorAll('.feature-card').forEach(card => {
     observer.observe(card);
 });
 
+// Fade effect for feature details sections
+const fadeOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+};
+
+const fadeObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        } else {
+            entry.target.style.opacity = '0.3';
+            entry.target.style.transform = 'translateY(20px)';
+        }
+    });
+}, fadeOptions);
+
+// Apply fade effect to all feature detail sections
+document.querySelectorAll('.feature-detail').forEach(section => {
+    section.style.opacity = '0.3';
+    section.style.transform = 'translateY(20px)';
+    section.style.transition = 'opacity 1s ease, transform 1s ease';
+    fadeObserver.observe(section);
+});
+
 // Observe manifesto section
 const manifesto = document.querySelector('.manifesto-content');
 if (manifesto) {
