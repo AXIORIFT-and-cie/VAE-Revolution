@@ -269,7 +269,7 @@ nav {
     z-index: 4;
     max-width: 1000px;
     padding: 4rem;
-    text-align: left;
+    text-align: left !important;
 }
 
 .detail-content h3 {
@@ -279,7 +279,7 @@ nav {
     color: var(--text-primary);
     letter-spacing: 0.05em;
     text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
-    text-align: left;
+    text-align: left !important;
 }
 
 .detail-content p {
@@ -287,7 +287,7 @@ nav {
     line-height: 2.2;
     color: var(--text-secondary);
     font-weight: 300;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* Manifesto Section */
