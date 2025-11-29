@@ -43,8 +43,6 @@ nav {
 
 .logo-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
 }
 
@@ -52,22 +50,11 @@ nav {
     height: 90px;
     filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.4));
     transition: all 0.4s ease;
-    margin-bottom: 0.5rem;
 }
 
 .logo:hover {
     filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.6));
     transform: translateY(-2px);
-}
-
-.header-tagline {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-weight: 300;
-    letter-spacing: 0.08em;
-    text-align: center;
-    margin: 0;
-    opacity: 0.8;
 }
 
 /* Hero Section */
