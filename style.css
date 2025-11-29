@@ -208,25 +208,26 @@ nav {
 
 /* Features Details Section */
 .features-details {
-    max-width: 100%;
+    width: 100vw;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .feature-detail {
     min-height: 100vh;
-    padding: 6rem 4rem;
-    border-radius: 0px;
-    border-left: 4px solid var(--accent-cyan);
+    width: 100%;
+    padding: 8rem 6rem;
+    border-radius: 0;
+    border: none;
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: opacity 0.8s ease;
+    justify-content: flex-start;
+    transition: opacity 1s ease, transform 1s ease;
 }
 
 .feature-detail::before {
@@ -236,46 +237,46 @@ nav {
     right: 0;
     width: 50%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.5);
     pointer-events: none;
-    transition: opacity 1s ease;
+    z-index: 1;
 }
 
 .feature-detail::after {
     content: '';
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 30%;
     background: linear-gradient(to bottom,
         rgba(8, 8, 8, 0) 0%,
-        rgba(8, 8, 8, 0.3) 50%,
-        rgba(8, 8, 8, 0.7) 100%
+        rgba(8, 8, 8, 0.6) 50%,
+        rgba(8, 8, 8, 0.95) 100%
     );
     pointer-events: none;
-    opacity: 0.5;
+    z-index: 3;
 }
 
 .detail-content {
     position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 3rem;
+    z-index: 4;
+    max-width: 1000px;
+    padding: 4rem;
 }
 
 .detail-content h3 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 3rem;
+    margin-bottom: 2.5rem;
     color: var(--text-primary);
     letter-spacing: 0.05em;
-    text-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
 }
 
 .detail-content p {
-    font-size: 1.3rem;
-    line-height: 2;
+    font-size: 1.4rem;
+    line-height: 2.2;
     color: var(--text-secondary);
     font-weight: 300;
 }
@@ -435,13 +436,9 @@ footer {
         font-size: 1.3rem;
     }
 
-    .features-details {
-        padding: 0;
-    }
-
     .feature-detail {
-        padding: 4rem 2rem;
-        min-height: 80vh;
+        padding: 5rem 2rem;
+        min-height: 90vh;
     }
 
     .detail-content {
@@ -449,11 +446,11 @@ footer {
     }
 
     .detail-content h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     .detail-content p {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
     }
 
     .manifesto-content h2 {
