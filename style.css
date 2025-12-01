@@ -22,12 +22,12 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     min-height: 100vh;
-    padding-top: 50px; /* Hauteur du header fixe */
+    padding-top: 90px; /* Hauteur du header fixe */
 }
 
 /* Header */
 header {
-    padding: 0.3rem 0;
+    padding: 0.6rem 0;
     border-bottom: 1px solid var(--border-color);
     background: rgba(8, 8, 8, 0.95);
     backdrop-filter: blur(10px);
@@ -55,7 +55,7 @@ nav {
 }
 
 .logo {
-    height: 35px;
+    height: 70px;
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
     transition: all 0.4s ease;
 }
