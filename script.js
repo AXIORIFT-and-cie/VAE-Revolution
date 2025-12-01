@@ -111,3 +111,27 @@ const stats = document.querySelector('.stats');
 if (stats) {
     statsObserver.observe(stats);
 }
+
+// Hide header on scroll down, show on scroll up
+let lastScrollTop = 0;
+const header = document.querySelector('header');
+const scrollThreshold = 100; // Start hiding after 100px of scroll
+
+window.addEventListener('scroll', function() {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > scrollThreshold) {
+        if (scrollTop > lastScrollTop) {
+            // Scrolling down
+            header.classList.add('hidden');
+        } else {
+            // Scrolling up
+            header.classList.remove('hidden');
+        }
+    } else {
+        // At the top of the page, always show header
+        header.classList.remove('hidden');
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+}, false);
