@@ -1,3 +1,26 @@
+// Apply header styles via JavaScript
+const headerElement = document.querySelector('header');
+if (headerElement) {
+    headerElement.style.padding = '0.6rem 0';
+    headerElement.style.position = 'fixed';
+    headerElement.style.top = '0';
+    headerElement.style.left = '0';
+    headerElement.style.right = '0';
+    headerElement.style.zIndex = '100';
+    headerElement.style.transition = 'transform 0.3s ease-in-out';
+    headerElement.style.background = 'rgba(8, 8, 8, 0.95)';
+    headerElement.style.backdropFilter = 'blur(10px)';
+}
+
+// Apply logo styles via JavaScript
+const logoElement = document.querySelector('.logo');
+if (logoElement) {
+    logoElement.style.height = '70px';
+}
+
+// Apply body padding for fixed header
+document.body.style.paddingTop = '90px';
+
 // Smooth scrolling for CTA button
 document.querySelector('.cta-button').addEventListener('click', function() {
     document.querySelector('.features').scrollIntoView({
@@ -114,7 +137,6 @@ if (stats) {
 
 // Hide header on scroll down, show on scroll up
 let lastScrollTop = 0;
-const header = document.querySelector('header');
 const scrollThreshold = 50; // Start hiding after 50px of scroll
 
 window.addEventListener('scroll', function() {
@@ -123,14 +145,20 @@ window.addEventListener('scroll', function() {
     if (scrollTop > scrollThreshold) {
         if (scrollTop > lastScrollTop) {
             // Scrolling down
-            header.classList.add('hidden');
+            if (headerElement) {
+                headerElement.style.transform = 'translateY(-100%)';
+            }
         } else {
             // Scrolling up
-            header.classList.remove('hidden');
+            if (headerElement) {
+                headerElement.style.transform = 'translateY(0)';
+            }
         }
     } else {
         // At the top of the page, always show header
-        header.classList.remove('hidden');
+        if (headerElement) {
+            headerElement.style.transform = 'translateY(0)';
+        }
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
