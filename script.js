@@ -115,7 +115,7 @@ if (stats) {
 // Hide header on scroll down, show on scroll up
 let lastScrollTop = 0;
 const header = document.querySelector('header');
-const scrollThreshold = 100; // Start hiding after 100px of scroll
+const scrollThreshold = 50; // Start hiding after 50px of scroll
 
 window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
