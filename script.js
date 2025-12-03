@@ -1,7 +1,7 @@
 // Apply header styles via JavaScript
 const headerElement = document.querySelector('header');
 if (headerElement) {
-    headerElement.style.padding = '0.8rem 0';
+    headerElement.style.padding = '1rem 0';
     headerElement.style.position = 'fixed';
     headerElement.style.top = '0';
     headerElement.style.left = '0';
@@ -15,17 +15,17 @@ if (headerElement) {
 // Apply logo styles via JavaScript
 const logoElement = document.querySelector('.logo');
 if (logoElement) {
-    logoElement.style.height = '100px';
+    logoElement.style.height = '130px';
 }
 
 // Apply hero logo styles via JavaScript
 const heroLogoElement = document.querySelector('.hero-logo');
 if (heroLogoElement) {
-    heroLogoElement.style.maxWidth = '900px';
+    heroLogoElement.style.maxWidth = '1100px';
 }
 
 // Apply body padding for fixed header
-document.body.style.paddingTop = '130px';
+document.body.style.paddingTop = '165px';
 
 // Smooth scrolling for CTA button
 document.querySelector('.cta-button').addEventListener('click', function() {
