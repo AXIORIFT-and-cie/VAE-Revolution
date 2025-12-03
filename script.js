@@ -141,29 +141,36 @@ if (stats) {
     statsObserver.observe(stats);
 }
 
-// Hide header on scroll down, show on scroll up
+// Hide header initially
+if (headerElement) {
+    headerElement.style.transform = 'translateY(-100%)';
+}
+
+// Show header only when hero logo is out of view
 let lastScrollTop = 0;
-const scrollThreshold = 50; // Start hiding after 50px of scroll
 
 window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const heroSection = document.querySelector('.hero');
+    const heroHeight = heroSection ? heroSection.offsetHeight : 400;
 
-    if (scrollTop > scrollThreshold) {
+    if (scrollTop > heroHeight * 0.7) {
+        // Hero logo is mostly out of view, show header
         if (scrollTop > lastScrollTop) {
-            // Scrolling down
+            // Scrolling down - keep header visible
             if (headerElement) {
-                headerElement.style.transform = 'translateY(-100%)';
+                headerElement.style.transform = 'translateY(0)';
             }
         } else {
-            // Scrolling up
+            // Scrolling up - keep header visible
             if (headerElement) {
                 headerElement.style.transform = 'translateY(0)';
             }
         }
     } else {
-        // At the top of the page, always show header
+        // Hero logo is still visible, hide header
         if (headerElement) {
-            headerElement.style.transform = 'translateY(0)';
+            headerElement.style.transform = 'translateY(-100%)';
         }
     }
 
