@@ -1,7 +1,7 @@
 // Apply header styles via JavaScript
 const headerElement = document.querySelector('header');
 if (headerElement) {
-    headerElement.style.padding = '1rem 0';
+    headerElement.style.padding = '0.7rem 0';
     headerElement.style.position = 'fixed';
     headerElement.style.top = '0';
     headerElement.style.left = '0';
@@ -15,7 +15,7 @@ if (headerElement) {
 // Apply logo styles via JavaScript
 const logoElement = document.querySelector('.logo');
 if (logoElement) {
-    logoElement.style.height = '130px';
+    logoElement.style.height = '90px';
 }
 
 // Apply hero logo styles via JavaScript
@@ -25,7 +25,7 @@ if (heroLogoElement) {
 }
 
 // Apply body padding for fixed header
-document.body.style.paddingTop = '165px';
+document.body.style.paddingTop = '120px';
 
 // Smooth scrolling for CTA button
 document.querySelector('.cta-button').addEventListener('click', function() {
