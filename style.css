@@ -69,7 +69,7 @@ nav {
 .hero {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 4rem 3rem;
+    padding: 2rem 3rem;
     text-align: center;
     min-height: 50vh;
     display: flex;
@@ -82,7 +82,7 @@ nav {
 }
 
 .hero-logo-container {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .hero-logo {

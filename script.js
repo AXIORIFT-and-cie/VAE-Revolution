@@ -25,7 +25,7 @@ if (heroLogoElement) {
 }
 
 // Apply body padding for fixed header
-document.body.style.paddingTop = '120px';
+document.body.style.paddingTop = '100px';
 
 // Smooth scrolling for CTA button
 document.querySelector('.cta-button').addEventListener('click', function() {
