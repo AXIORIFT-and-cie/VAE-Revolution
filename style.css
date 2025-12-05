@@ -450,6 +450,30 @@ nav {
     color: var(--text-secondary);
 }
 
+.story-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.story-text p {
+    font-size: 1.3rem;
+    line-height: 2;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.story-text p:last-child {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    margin-top: 3rem;
+    letter-spacing: 0.05em;
+}
+
 /* Footer */
 footer {
     border-top: 1px solid var(--border-color);
