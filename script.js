@@ -222,3 +222,81 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
         });
     });
 });
+
+// Hamburger Menu
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+// Create overlay element
+const navOverlay = document.createElement('div');
+navOverlay.className = 'nav-overlay';
+document.body.appendChild(navOverlay);
+
+function toggleMenu() {
+    hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+    hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+}
+
+function closeMenu() {
+    hamburger.classList.remove('active');
+    navLinks.classList.remove('active');
+    navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+}
+
+hamburger.addEventListener('click', toggleMenu);
+navOverlay.addEventListener('click', closeMenu);
+
+// Close menu when clicking a nav link on mobile
+navLinks.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+            closeMenu();
+        }
+    });
+});
+
+// Close menu on resize if open
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        closeMenu();
+    }
+});
+
+// Contact Form (Mockup)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = this.querySelector('.submit-btn');
+        const originalContent = submitBtn.innerHTML;
+
+        // Show loading state
+        submitBtn.innerHTML = '<span>' + (currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...') + '</span>';
+        submitBtn.disabled = true;
+
+        // Simulate form submission
+        setTimeout(() => {
+            // Show success message
+            submitBtn.innerHTML = '<span>' + (currentLang === 'fr' ? 'Message envoyé !' : 'Message sent!') + '</span> <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            submitBtn.style.borderColor = '#00ff88';
+            submitBtn.style.background = 'linear-gradient(135deg, rgba(0, 255, 136, 0.3), rgba(0, 255, 136, 0.1))';
+
+            // Reset form
+            contactForm.reset();
+
+            // Reset button after 3 seconds
+            setTimeout(() => {
+                submitBtn.innerHTML = originalContent;
+                submitBtn.disabled = false;
+                submitBtn.style.borderColor = '';
+                submitBtn.style.background = '';
+            }, 3000);
+        }, 1500);
+    });
+}

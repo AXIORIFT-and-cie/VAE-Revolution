@@ -4,6 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AXIORIFT - La Perfection Électrique</title>
+    <meta name="description" content="AXIORIFT - Kit de conversion vélo électrique révolutionnaire. Système de friction sur jantes, batterie Nitro design, récupération d'énergie. Créé par 3 lycéens innovants.">
+    <meta name="keywords" content="AXIORIFT, vélo électrique, kit conversion, VAE, e-bike, friction jantes, batterie nitro, écologique, innovation">
+    <meta name="author" content="AXIORIFT - DJAZIRI Neïl, MORRICE William, BRETHES Rodrigue">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://axiorift.com/">
+    <meta property="og:title" content="AXIORIFT - La Perfection Électrique">
+    <meta property="og:description" content="Kit de conversion vélo électrique révolutionnaire. Système de friction sur jantes, batterie Nitro design, récupération d'énergie.">
+    <meta property="og:image" content="assets/images/logo.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AXIORIFT - La Perfection Électrique">
+    <meta name="twitter:description" content="Kit de conversion vélo électrique révolutionnaire. Créé par 3 lycéens innovants.">
+    <meta name="twitter:image" content="assets/images/logo.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="apple-touch-icon" href="assets/images/logo.png">
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,10 +59,16 @@
                 <!-- ÉTAPE : Placez votre image logo.png dans le dossier assets/images/ -->
                 <img src="assets/images/logo.png" alt="AXIORIFT" class="logo">
             </div>
+            <button class="hamburger" aria-label="Menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
             <div class="nav-links">
-                <a href="#" class="nav-link" data-section="kit" data-fr="AXIORIFT kit" data-en="AXIORIFT kit">AXIORIFT kit</a>
+                <a href="#" class="nav-link active" data-section="kit" data-fr="AXIORIFT kit" data-en="AXIORIFT kit">AXIORIFT kit</a>
                 <a href="#" class="nav-link" data-section="processus" data-fr="Notre processus" data-en="Our process">Notre processus</a>
                 <a href="#" class="nav-link" data-section="histoire" data-fr="Notre histoire" data-en="Our story">Notre histoire</a>
+                <a href="#" class="nav-link" data-section="contact" data-fr="Contact" data-en="Contact">Contact</a>
             </div>
         </nav>
     </header>
@@ -180,6 +209,68 @@
                         <p data-fr="AXIORIFT est né d'un projet de spécialité SI en classe de première, porté par trois élèves : DJAZIRI Neïl, MORRICE William et BRETHES Rodrigue. Face au coût inaccessible des VAE traditionnels, nous avons développé un kit de conversion révolutionnaire basé sur un système de friction sur jantes." data-en="AXIORIFT was born from an SI specialty project in 11th grade, driven by three students: DJAZIRI Neïl, MORRICE William and BRETHES Rodrigue. Facing the inaccessible cost of traditional e-bikes, we developed a revolutionary conversion kit based on a rim friction system.">AXIORIFT est né d'un projet de spécialité SI en classe de première, porté par trois élèves : DJAZIRI Neïl, MORRICE William et BRETHES Rodrigue. Face au coût inaccessible des VAE traditionnels, nous avons développé un kit de conversion révolutionnaire basé sur un système de friction sur jantes.</p>
 
                         <p data-fr="AXIORIFT incarne notre conviction que l'âge n'est pas une barrière à l'innovation. Trois lycéens, une vision, une révolution." data-en="AXIORIFT embodies our conviction that age is not a barrier to innovation. Three high school students, one vision, one revolution.">AXIORIFT incarne notre conviction que l'âge n'est pas une barrière à l'innovation. Trois lycéens, une vision, une révolution.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Section -->
+        <div id="contact-section" class="main-section" style="display: none;">
+            <section class="contact-section">
+                <div class="section-content">
+                    <h2 data-fr="Contactez-nous" data-en="Contact us">Contactez-nous</h2>
+                    <p class="contact-intro" data-fr="Une question ? Intéressé par notre kit ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais." data-en="Have a question? Interested in our kit? Fill out the form below and we'll get back to you as soon as possible.">Une question ? Intéressé par notre kit ? Remplissez le formulaire ci-dessous et nous vous répondrons dans les plus brefs délais.</p>
+
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-fr="Nom complet" data-en="Full name">Nom complet</label>
+                            <input type="text" id="name" name="name" required placeholder="Jean Dupont">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-fr="Adresse email" data-en="Email address">Adresse email</label>
+                            <input type="email" id="email" name="email" required placeholder="jean.dupont@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" data-fr="Sujet" data-en="Subject">Sujet</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" data-fr="Choisir un sujet..." data-en="Choose a subject...">Choisir un sujet...</option>
+                                <option value="info" data-fr="Demande d'informations" data-en="Information request">Demande d'informations</option>
+                                <option value="preorder" data-fr="Pré-commande" data-en="Pre-order">Pré-commande</option>
+                                <option value="partnership" data-fr="Partenariat" data-en="Partnership">Partenariat</option>
+                                <option value="press" data-fr="Presse / Média" data-en="Press / Media">Presse / Média</option>
+                                <option value="other" data-fr="Autre" data-en="Other">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-fr="Votre message" data-en="Your message">Votre message</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Écrivez votre message ici..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <span data-fr="Envoyer le message" data-en="Send message">Envoyer le message</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+                    </form>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
+                                <polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                            <span>contact@axiorift.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                            </svg>
+                            <a href="https://instagram.com/axiorift_and_cie" target="_blank">@axiorift_and_cie</a>
+                        </div>
                     </div>
                 </div>
             </section>
