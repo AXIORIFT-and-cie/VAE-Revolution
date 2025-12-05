@@ -65,6 +65,14 @@ nav {
     border-radius: 4px;
     transition: all 0.3s ease;
     font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flag-icon {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .lang-btn:hover {
@@ -136,6 +144,9 @@ nav {
 
 .hero-logo-container {
     margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .hero-logo {
