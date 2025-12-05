@@ -15,9 +15,11 @@
             <div class="language-selector">
                 <button class="lang-btn active" data-lang="fr">
                     <span class="flag">🇫🇷</span>
+                    <span>FR</span>
                 </button>
                 <button class="lang-btn" data-lang="en">
                     <span class="flag">🇬🇧</span>
+                    <span>EN</span>
                 </button>
             </div>
             <div class="logo-container">
@@ -25,30 +27,33 @@
                 <img src="assets/images/logo.png" alt="AXIORIFT" class="logo">
             </div>
             <div class="nav-links">
-                <a href="#processus">Notre processus</a>
-                <a href="#histoire">Notre histoire</a>
+                <a href="#" class="nav-link" data-section="kit" data-fr="AXIORIFT kit" data-en="AXIORIFT kit">AXIORIFT kit</a>
+                <a href="#" class="nav-link" data-section="processus" data-fr="Notre processus" data-en="Our process">Notre processus</a>
+                <a href="#" class="nav-link" data-section="histoire" data-fr="Notre histoire" data-en="Our story">Notre histoire</a>
             </div>
         </nav>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <div class="hero-logo-container">
-                    <!-- ÉTAPE : Placez votre image logo.png dans le dossier assets/images/ -->
-                    <img src="assets/images/logo.png" alt="AXIORIFT" class="hero-logo">
+        <!-- AXIORIFT Kit Section -->
+        <div id="kit-section" class="main-section">
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-logo-container">
+                        <!-- ÉTAPE : Placez votre image logo.png dans le dossier assets/images/ -->
+                        <img src="assets/images/logo.png" alt="AXIORIFT" class="hero-logo">
+                    </div>
+                    <p class="tagline" data-fr="L'excellence en mouvement. Subtile, mais essentielle." data-en="Excellence in motion. Subtle, but essential.">L'excellence en mouvement. Subtile, mais essentielle.</p>
+                    <div class="cta-container">
+                        <button class="cta-button">
+                            <span data-fr="DÉCOUVRIR" data-en="DISCOVER">DÉCOUVRIR</span>
+                            <div class="button-glow"></div>
+                        </button>
+                    </div>
                 </div>
-                <p class="tagline">L'excellence en mouvement. Subtile, mais essentielle.</p>
-                <div class="cta-container">
-                    <button class="cta-button">
-                        <span>DÉCOUVRIR</span>
-                        <div class="button-glow"></div>
-                    </button>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="features">
+            <section class="features">
             <div class="feature-card">
                 <div class="feature-icon">
                     <svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,20 +137,28 @@
                 </div>
             </div>
         </section>
+        </div>
+        <!-- End AXIORIFT Kit Section -->
 
-        <section id="processus" class="processus-section">
-            <div class="section-content">
-                <h2>Notre processus</h2>
-                <p>Contenu à venir...</p>
-            </div>
-        </section>
+        <!-- Notre Processus Section -->
+        <div id="processus-section" class="main-section" style="display: none;">
+            <section class="processus-section">
+                <div class="section-content">
+                    <h2 data-fr="Notre processus" data-en="Our process">Notre processus</h2>
+                    <p data-fr="Contenu à venir..." data-en="Coming soon...">Contenu à venir...</p>
+                </div>
+            </section>
+        </div>
 
-        <section id="histoire" class="histoire-section">
-            <div class="section-content">
-                <h2>Notre histoire</h2>
-                <p>Contenu à venir...</p>
-            </div>
-        </section>
+        <!-- Notre Histoire Section -->
+        <div id="histoire-section" class="main-section" style="display: none;">
+            <section class="histoire-section">
+                <div class="section-content">
+                    <h2 data-fr="Notre histoire" data-en="Our story">Notre histoire</h2>
+                    <p data-fr="Contenu à venir..." data-en="Coming soon...">Contenu à venir...</p>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>

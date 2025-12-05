@@ -176,3 +176,49 @@ window.addEventListener('scroll', function() {
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }, false);
+
+// Section Navigation
+let currentLang = 'fr';
+
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const sectionName = this.getAttribute('data-section');
+
+        // Hide all sections
+        document.querySelectorAll('.main-section').forEach(section => {
+            section.style.display = 'none';
+        });
+
+        // Show selected section
+        const targetSection = document.getElementById(sectionName + '-section');
+        if (targetSection) {
+            targetSection.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Update active link
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// Language Translation
+document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const lang = this.getAttribute('data-lang');
+        currentLang = lang;
+
+        // Update active button
+        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+
+        // Translate all elements with data-fr and data-en
+        document.querySelectorAll('[data-fr][data-en]').forEach(element => {
+            const text = element.getAttribute('data-' + lang);
+            if (text) {
+                element.textContent = text;
+            }
+        });
+    });
+});

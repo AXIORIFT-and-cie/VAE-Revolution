@@ -101,6 +101,12 @@ nav {
     color: var(--accent-cyan);
 }
 
+.nav-links a.active {
+    color: var(--accent-cyan);
+    border-bottom: 2px solid var(--accent-cyan);
+    padding-bottom: 0.2rem;
+}
+
 .logo {
     height: 70px;
     filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.3));
