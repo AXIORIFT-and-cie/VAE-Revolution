@@ -47,11 +47,58 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.lang-btn:hover {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 212, 255, 0.1);
+}
+
+.lang-btn.active {
+    border-color: var(--accent-cyan);
+    background: rgba(0, 212, 255, 0.15);
 }
 
 .logo-container {
     display: flex;
     justify-content: center;
+    flex: 1;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-cyan);
 }
 
 .logo {
@@ -350,6 +397,31 @@ nav {
     text-transform: uppercase;
     letter-spacing: 0.15em;
     font-weight: 400;
+}
+
+/* Processus & Histoire Sections */
+.processus-section,
+.histoire-section {
+    max-width: 1400px;
+    margin: 8rem auto;
+    padding: 6rem 3rem;
+    text-align: center;
+    background: rgba(20, 20, 25, 0.3);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.section-content h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--accent-cyan);
+    margin-bottom: 2rem;
+    letter-spacing: 0.1em;
+}
+
+.section-content p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
 }
 
 /* Footer */
