@@ -50,6 +50,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .language-selector {
@@ -87,9 +88,11 @@ nav {
 }
 
 .logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    flex: 1;
 }
 
 .nav-links {
