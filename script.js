@@ -235,17 +235,21 @@ const navOverlay = document.createElement('div');
 navOverlay.className = 'nav-overlay';
 document.body.appendChild(navOverlay);
 
+// Check if mobile menu should be active
+function isMobileMenuMode() {
+    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+    const isSmallWidth = window.innerWidth <= 568;
+    const isMediumPortrait = window.innerWidth <= 768 && isPortrait;
+    return isSmallWidth || isMediumPortrait;
+}
+
 function toggleMenu() {
     if (!hamburger || !navLinks) return;
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-
-    if (navLinks.classList.contains('active')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
+    const isActive = hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active', isActive);
+    navOverlay.classList.toggle('active', isActive);
+    document.body.style.overflow = isActive ? 'hidden' : '';
+    hamburger.setAttribute('aria-expanded', String(isActive));
 }
 
 function closeMenu() {
@@ -254,11 +258,24 @@ function closeMenu() {
     navLinks.classList.remove('active');
     navOverlay.classList.remove('active');
     document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
 }
 
-// Hamburger event - use simple click only
+// Hamburger click/touch events
 if (hamburger) {
+    // Prevent any default behavior
+    hamburger.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    hamburger.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    }, { passive: false });
+
     hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
         e.stopPropagation();
         toggleMenu();
     });
@@ -266,16 +283,36 @@ if (hamburger) {
 
 // Overlay click to close
 navOverlay.addEventListener('click', closeMenu);
+navOverlay.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    closeMenu();
+}, { passive: false });
 
-// Close menu when clicking a nav link
+// Close menu when clicking a nav link on mobile
 if (navLinks) {
     navLinks.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', closeMenu);
+        link.addEventListener('click', () => {
+            if (isMobileMenuMode()) {
+                closeMenu();
+            }
+        });
     });
 }
 
-// Close menu on window resize
-window.addEventListener('resize', closeMenu);
+// Close menu on resize/orientation change if no longer in mobile mode
+window.addEventListener('resize', () => {
+    if (!isMobileMenuMode()) {
+        closeMenu();
+    }
+});
+
+window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+        if (!isMobileMenuMode()) {
+            closeMenu();
+        }
+    }, 100);
+});
 
 // Contact Form (Mockup)
 const contactForm = document.getElementById('contactForm');
