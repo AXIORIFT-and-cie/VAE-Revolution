@@ -28,11 +28,14 @@ if (heroLogoElement) {
 document.body.style.paddingTop = '95px';
 
 // Smooth scrolling for CTA button
-document.querySelector('.cta-button').addEventListener('click', function() {
-    document.querySelector('.features').scrollIntoView({
-        behavior: 'smooth'
+const ctaButton = document.querySelector('.cta-button');
+if (ctaButton) {
+    ctaButton.addEventListener('click', function() {
+        document.querySelector('.features').scrollIntoView({
+            behavior: 'smooth'
+        });
     });
-});
+}
 
 // Subtle glow effect on hero logo hover
 const heroLogo = document.querySelector('.hero-logo');
@@ -241,16 +244,16 @@ function isMobileMenuMode() {
 }
 
 function toggleMenu() {
-    if (!hamburger) return;
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-    hamburger.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    if (!hamburger || !navLinks) return;
+    const isActive = hamburger.classList.toggle('active');
+    navLinks.classList.toggle('active', isActive);
+    navOverlay.classList.toggle('active', isActive);
+    document.body.style.overflow = isActive ? 'hidden' : '';
+    hamburger.setAttribute('aria-expanded', String(isActive));
 }
 
 function closeMenu() {
-    if (!hamburger) return;
+    if (!hamburger || !navLinks) return;
     hamburger.classList.remove('active');
     navLinks.classList.remove('active');
     navOverlay.classList.remove('active');
@@ -258,7 +261,19 @@ function closeMenu() {
     hamburger.setAttribute('aria-expanded', 'false');
 }
 
+// Hamburger click/touch events
 if (hamburger) {
+    // Prevent any default behavior
+    hamburger.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+    }, { passive: false });
+
+    hamburger.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    }, { passive: false });
+
     hamburger.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
@@ -266,16 +281,23 @@ if (hamburger) {
     });
 }
 
+// Overlay click to close
 navOverlay.addEventListener('click', closeMenu);
+navOverlay.addEventListener('touchend', function(e) {
+    e.preventDefault();
+    closeMenu();
+}, { passive: false });
 
 // Close menu when clicking a nav link on mobile
-navLinks.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        if (isMobileMenuMode()) {
-            closeMenu();
-        }
+if (navLinks) {
+    navLinks.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            if (isMobileMenuMode()) {
+                closeMenu();
+            }
+        });
     });
-});
+}
 
 // Close menu on resize/orientation change if no longer in mobile mode
 window.addEventListener('resize', () => {
