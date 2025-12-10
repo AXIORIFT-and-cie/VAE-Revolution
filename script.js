@@ -232,7 +232,16 @@ const navOverlay = document.createElement('div');
 navOverlay.className = 'nav-overlay';
 document.body.appendChild(navOverlay);
 
+// Check if mobile menu should be active
+function isMobileMenuMode() {
+    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+    const isSmallWidth = window.innerWidth <= 568;
+    const isMediumPortrait = window.innerWidth <= 768 && isPortrait;
+    return isSmallWidth || isMediumPortrait;
+}
+
 function toggleMenu() {
+    if (!hamburger) return;
     hamburger.classList.toggle('active');
     navLinks.classList.toggle('active');
     navOverlay.classList.toggle('active');
@@ -241,6 +250,7 @@ function toggleMenu() {
 }
 
 function closeMenu() {
+    if (!hamburger) return;
     hamburger.classList.remove('active');
     navLinks.classList.remove('active');
     navOverlay.classList.remove('active');
@@ -248,23 +258,38 @@ function closeMenu() {
     hamburger.setAttribute('aria-expanded', 'false');
 }
 
-hamburger.addEventListener('click', toggleMenu);
+if (hamburger) {
+    hamburger.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+    });
+}
+
 navOverlay.addEventListener('click', closeMenu);
 
 // Close menu when clicking a nav link on mobile
 navLinks.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
+        if (isMobileMenuMode()) {
             closeMenu();
         }
     });
 });
 
-// Close menu on resize if open
+// Close menu on resize/orientation change if no longer in mobile mode
 window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
+    if (!isMobileMenuMode()) {
         closeMenu();
     }
+});
+
+window.addEventListener('orientationchange', () => {
+    setTimeout(() => {
+        if (!isMobileMenuMode()) {
+            closeMenu();
+        }
+    }, 100);
 });
 
 // Contact Form (Mockup)
